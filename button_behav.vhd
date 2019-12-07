@@ -1,7 +1,7 @@
 library ieee; use ieee.std_logic_1164.all;
 
 architecture behav of button is
-	signal	tx_n, tx_sync, key:	std_logic;
+	signal	tx_sync:	std_logic;
 	type		states is (IDLE, PRESSED_ONE_CYCLE, PRESSED_LONGER);
 	signal	current_state, next_state: states;
 	-- da fehlen signale
