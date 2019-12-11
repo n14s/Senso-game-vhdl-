@@ -7,7 +7,7 @@ architecture struct of tb is
 	--signal valid_int: std_logic;
 	--signal color_int: std_logic_vector(0 to 1);
 	--signal key_int: std_logic_vector(0 to 3);
-	signal start_timer, timer_expired: std_logic;
+	signal start_timer, timer_expired, dec_duration, res_duration: std_logic;
 	
 begin
 	senso_clk: entity clk_res_gen
@@ -21,8 +21,8 @@ begin
 ------------------------------------------
 -- timer test ----------------------------
 	senso_timer: entity timer
-		port map(clk => clk, res_n => res_n, start_timer => start_timer, timer_expired => timer_expired);
+		port map(clk => clk, res_n => res_n, start_timer => start_timer, timer_expired => timer_expired, dec_duration => dec_duration, res_duration => res_duration);
 	senso_timer_tester: entity tester_timer
-		port map(clk => clk, res_n => res_n, start_timer => start_timer);
+		port map(clk => clk, res_n => res_n, start_timer => start_timer, dec_duration => dec_duration, res_duration => res_duration);
 	
 end architecture struct;
