@@ -8,8 +8,7 @@ architecture behav of button is
 	-- vorallem vom moore
 begin
 	synchronizer: process(clk, res_n) is
-	--Varrrr ich bin ein pirat
-	variable flippy: 	std_logic;
+		variable flippy: 	std_logic;
 	begin
 		if res_n = '0' then
 			-- set output 0
@@ -25,7 +24,6 @@ begin
 	end process synchronizer;
 	
 	state: process(clk, res_n) is
-	--STATE VAR
 	begin
 		if res_n = '0' then
 			current_state <= IDLE;
@@ -37,7 +35,6 @@ begin
 	end process state;
 	
 	output: process(clk, res_n) is
-	--OUTPUT VAR
 	begin
 		case current_state is
 		when IDLE =>
@@ -49,8 +46,7 @@ begin
 		end case;
 	end process output;
 	
-	transition: process(clk, res_n) is
-	--TRANSITION VAR
+	transition: process(current_state, tx_sync) is
 	begin
 		case current_state is
 		when IDLE =>
