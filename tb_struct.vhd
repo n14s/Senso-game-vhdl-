@@ -25,8 +25,6 @@ architecture struct of tb is
 	signal score_low_int, score_high_int:												std_logic_vector(6 downto 0);
 	-- Input
 	signal key_in_n_int:																		std_logic_vector(3 downto 0);
-	-- Input tester
-	signal tester_key_int:																	std_logic_vector(0 to 3);
 	-- Output
 	signal color_int:																			std_logic_vector(1 downto 0);
 	signal leds_int:																			std_logic_vector(3 downto 0);
@@ -39,7 +37,7 @@ begin
 	senso_input: entity input
 		port map(clk => clk, res_n => res_n, key_in_n => key_in_n_int, key_valid => key_valid_int , key_color => key_color_int);
 	senso_tester: entity tester_input
-		port map(clk => clk, res_n => res_n, tester_key => tester_key_int);
+		port map(clk => clk, res_n => res_n, tester_key => key_in_n_int);
 ------------------------------------------
 -- timer test ----------------------------
 	senso_timer: entity timer

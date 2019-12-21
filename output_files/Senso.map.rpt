@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Senso
-Fri Dec 20 21:14:34 2019
+Sat Dec 21 16:07:20 2019
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -48,7 +48,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Dec 20 21:14:34 2019       ;
+; Analysis & Synthesis Status     ; Successful - Sat Dec 21 16:07:20 2019       ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; Senso                                       ;
 ; Top-level Entity Name           ; input                                       ;
@@ -168,7 +168,8 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -354,12 +355,12 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Fri Dec 20 21:14:25 2019
+    Info: Processing started: Sat Dec 21 16:07:11 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Senso -c Senso
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 0 entities, in source file timer_behav.vhd
-    Info (12022): Found design unit 1: timer-behav File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/timer_behav.vhd Line: 3
+    Info (12022): Found design unit 1: timer-behav File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/timer_behav.vhd Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file timer_entity.vhd
     Info (12023): Found entity 1: timer File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/timer_entity.vhd Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file counter_entity.vhd
@@ -416,9 +417,9 @@ Info (21057): Implemented 28 device resources after synthesis - the final resour
     Info (21059): Implemented 3 output pins
     Info (21061): Implemented 19 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 1052 megabytes
-    Info: Processing ended: Fri Dec 20 21:14:34 2019
+    Info: Peak virtual memory: 1080 megabytes
+    Info: Processing ended: Sat Dec 21 16:07:20 2019
     Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:22
+    Info: Total CPU time (on all processors): 00:00:23
 
 

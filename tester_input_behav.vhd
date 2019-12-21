@@ -7,7 +7,12 @@ begin
 		tester_key <= "1111";
 		wait for 50 ns;
 		tester_key <= "0111";
-		wait;
+		wait for 2200ns;
+		tester_key <= "1011";
+		wait for 2200ns;
+		tester_key <= "1101";
+		wait for 2200ns;
+		tester_key <= "1110";
 	end process;
 	
 end architecture;

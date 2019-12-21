@@ -6,10 +6,15 @@ begin
 	counter_step: process(clk, res_n) is
 		variable step_int: integer range 0 to 99;
 	begin
-		if clk'event and clk = '1' and res_step = '1' then
-			step_int := 0;
-		elsif clk'event and clk = '1' and res_step = '0' then
-			step_int := step_int + 1;
+		if clk'event and clk = '1' then
+			if res_step = '1' then
+				step_int := 0;
+			elsif inc_step = '1' then
+				step_int := step_int + 1;
+				if step_int = 99 then
+					step_int := 0;
+				end if;
+			end if;
 		end if;
 		step_sig <= step_int;
 	end process counter_step;
@@ -18,10 +23,15 @@ begin
 	counter_score: process(clk, res_n) is
 		variable score_int: integer range 0 to 99;
 	begin
-		if clk'event and clk = '1' and res_score = '1' then
-			score_int := 0;
-		elsif clk'event and clk = '1' and res_score = '0' then
-			score_int := score_int + 1;
+		if clk'event and clk = '1' then
+			if res_score = '1' then
+				score_int := 0;
+			elsif inc_score = '1' then
+				score_int := score_int + 1;
+				if score_int = 99 then
+					score_int := 0;
+				end if;
+			end if;
 		end if;
 		score_sig <= score_int;
 	end process counter_score;
@@ -32,7 +42,7 @@ begin
 		if step_sig = score_sig then
 			step_eq_score <= '1';
 		else
-			step_eq_score <= '1';
+			step_eq_score <= '0';
 		end if;
 	end process compare_values;
 	

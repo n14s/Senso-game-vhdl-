@@ -11,7 +11,7 @@ begin
 				when "00" => leds <= "0001";
 				when "01" => leds <= "0010";
 				when "10" => leds <= "0100";
-				when "11" => leds <= "1000";
+				when others => leds <= "1000";
 			end case;
 		else
 			leds <= "0000";
