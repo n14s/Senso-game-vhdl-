@@ -15,7 +15,7 @@ begin
 			flippy := '0';
 			tx_sync <= '0';
 		else
-			if clk'event and clk = '0' then
+			if clk'event and clk = '1' then
 				--DLatch logic
 				tx_sync <= flippy;
 				flippy := not tx_n;

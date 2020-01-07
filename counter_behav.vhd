@@ -25,11 +25,11 @@ begin
 	begin
 		if clk'event and clk = '1' then
 			if res_score = '1' then
-				score_int := 0;
+				score_int := 1;
 			elsif inc_score = '1' then
 				score_int := score_int + 1;
 				if score_int = 99 then
-					score_int := 0;
+					score_int := 1;
 				end if;
 			end if;
 		end if;
@@ -49,8 +49,10 @@ begin
 	
 	bin2bcd: process(score_sig) is
 	variable score_low_int, score_high_int: 	integer range 0 to 9;
+	variable score_var:								integer range -1 to 99;
 	variable score_low_b, score_high_b:			std_logic_vector(6 downto 0);
 	begin
+	score_var := score_sig - 1;
 		if score_sig >= 10 then
 			score_low_int := score_sig mod 10;
 			score_high_int := score_sig / 10;

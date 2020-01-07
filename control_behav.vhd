@@ -1,7 +1,7 @@
 library ieee; use ieee.std_logic_1164.all;
 
 architecture behav of control is
-	type states is (IDLE, INIT, READY, STARTSHOW, LEDOFF, LEDON, STARTPLAY, CORRECT, LOCKCORRECT, LEVELUP, OVER);
+	type states is (IDLE, INIT, READY, STARTSHOW, LEDOFF, COMPARE, LEDON, STARTPLAY, CORRECT, LOCKCORRECT, LEVELUP, OVER);
 	
 	signal current_state, next_state: states;
 begin
@@ -48,11 +48,12 @@ begin
 				start_timer <= '0';
 				inc_step <= '1';
 				next_rnd <= '1';
+			when COMPARE =>
+				inc_step <= '0';
+				next_rnd <= '0';
 			when LEDON =>
 				led_on <= '1';
 				start_timer <= '1';
-				inc_step <= '0';
-				next_rnd <= '0';
 			when STARTPLAY =>
 				res_step <= '1';
 				inc_step <= '0';
@@ -73,6 +74,7 @@ begin
 			when OVER =>
 				all_on <= '1';
 				start_timer <= '1';
+				restore_rnd <= '0';
 		end case;
 	end process output;
 	
@@ -88,7 +90,9 @@ begin
 				next_state <= STARTSHOW;
 			when STARTSHOW => 
 				if timer_expired = '1' then next_state <= LEDOFF; end if;
-			when LEDOFF	=> 
+			when LEDOFF => 
+				next_state <= COMPARE;
+			when COMPARE => 
 				if step_eq_score = '0' then 
 					next_state <= LEDON;
 				else 
@@ -107,13 +111,11 @@ begin
 			when CORRECT => 
 				next_state <= LOCKCORRECT;
 			when LOCKCORRECT => 
-				if key_valid = '1' then
+				if step_eq_score = '1' then
+					next_state <= LEVELUP;
+				elsif key_valid = '1' then
 					if key_color = rnd then
-						if step_eq_score = '1' then
-							next_state <= LEVELUP;
-						else
-							next_state <= CORRECT;
-						end if;
+						next_state <= CORRECT;
 					else
 						next_state <= OVER;
 					end if;
