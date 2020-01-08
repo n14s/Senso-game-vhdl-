@@ -62,30 +62,30 @@ begin
 		end if;
 	
 	case score_low_int is
-		when 0 => score_low <= "1111110";
-		when 1 => score_low <= "0110000";
-		when 2 => score_low <= "1101101";
-		when 3 => score_low <= "1111001";
-		when 4 => score_low <= "0110011";
-		when 5 => score_low <= "1011011";
-		when 6 => score_low <= "1011111";
-		when 7 => score_low <= "1110000";
-		when 8 => score_low <= "1111111";
-		when 9 => score_low <= "1111011";
+		when 0 => score_low <= not "1111110";
+		when 1 => score_low <= not "0110000";
+		when 2 => score_low <= not "1101101";
+		when 3 => score_low <= not "1111001";
+		when 4 => score_low <= not "0110011";
+		when 5 => score_low <= not "1011011";
+		when 6 => score_low <= not "1011111";
+		when 7 => score_low <= not "1110000";
+		when 8 => score_low <= not "1111111";
+		when 9 => score_low <= not "1111011";
 		when others => score_low <= (others => 'X');
 		end case;
 
 		case score_high_int is
-		when 0 => score_high <= "1111110";
-		when 1 => score_high <= "0110000";
-		when 2 => score_high <= "1101101";
-		when 3 => score_high <= "1111001";
-		when 4 => score_high <= "0110011";
-		when 5 => score_high <= "1011011";
-		when 6 => score_high <= "1011111";
-		when 7 => score_high <= "1110000";
-		when 8 => score_high <= "1111111";
-		when 9 => score_high <= "1111011";
+		when 0 => score_high <= not "1111110";
+		when 1 => score_high <= not "0110000";
+		when 2 => score_high <= not "1101101";
+		when 3 => score_high <= not "1111001";
+		when 4 => score_high <= not "0110011";
+		when 5 => score_high <= not "1011011";
+		when 6 => score_high <= not "1011111";
+		when 7 => score_high <= not "1110000";
+		when 8 => score_high <= not "1111111";
+		when 9 => score_high <= not "1111011";
 		when others => score_high <= (others => 'X');
 		end case;
 	

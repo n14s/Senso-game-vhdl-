@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Senso
-Tue Jan  7 22:06:30 2020
+Wed Jan  8 18:20:34 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -13,15 +13,21 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |input|button:button4|current_state
-  9. State Machine - |input|button:button3|current_state
- 10. State Machine - |input|button:button2|current_state
- 11. State Machine - |input|button:button1|current_state
- 12. Registers Removed During Synthesis
- 13. General Register Statistics
- 14. Post-Synthesis Netlist Statistics for Top Partition
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+  8. State Machine - |senso|control:senso_control|current_state
+  9. State Machine - |senso|input:senso_input|button:button4|current_state
+ 10. State Machine - |senso|input:senso_input|button:button3|current_state
+ 11. State Machine - |senso|input:senso_input|button:button2|current_state
+ 12. State Machine - |senso|input:senso_input|button:button1|current_state
+ 13. Registers Removed During Synthesis
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Parameter Settings for Inferred Entity Instance: counter:senso_counter|lpm_divide:Mod0
+ 18. Parameter Settings for Inferred Entity Instance: counter:senso_counter|lpm_divide:Div0
+ 19. Parameter Settings for Inferred Entity Instance: timer:senso_timer|lpm_divide:Div0
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
 
 
 
@@ -48,14 +54,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Jan  7 22:06:30 2020       ;
+; Analysis & Synthesis Status     ; Successful - Wed Jan  8 18:20:34 2020       ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; Senso                                       ;
-; Top-level Entity Name           ; input                                       ;
+; Top-level Entity Name           ; senso                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 19                                          ;
-; Total pins                      ; 9                                           ;
+; Total registers                 ; 125                                         ;
+; Total pins                      ; 24                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -73,8 +79,8 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
-; Top-level entity name                                                           ; input              ; Senso              ;
+; Device                                                                          ; 5CGXFC5C6F27C7     ;                    ;
+; Top-level entity name                                                           ; senso              ; Senso              ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -168,39 +174,57 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                     ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                              ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
-; timer_behav.vhd                  ; yes             ; User VHDL File  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/timer_behav.vhd         ;         ;
-; timer_entity.vhd                 ; yes             ; User VHDL File  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/timer_entity.vhd        ;         ;
-; counter_entity.vhd               ; yes             ; User VHDL File  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/counter_entity.vhd      ;         ;
-; counter_behav.vhd                ; yes             ; User VHDL File  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/counter_behav.vhd       ;         ;
-; galois_entity.vhd                ; yes             ; User VHDL File  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/galois_entity.vhd       ;         ;
-; galois_behav.vhd                 ; yes             ; User VHDL File  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/galois_behav.vhd        ;         ;
-; input_entity.vhd                 ; yes             ; User VHDL File  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/input_entity.vhd        ;         ;
-; input_behav.vhd                  ; yes             ; User VHDL File  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/input_behav.vhd         ;         ;
-; button_behav.vhd                 ; yes             ; User VHDL File  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/button_behav.vhd        ;         ;
-; button_entity.vhd                ; yes             ; User VHDL File  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/button_entity.vhd       ;         ;
-; senso_entity.vhd                 ; yes             ; User VHDL File  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/senso_entity.vhd        ;         ;
-; clk_res_gen_entity.vhd           ; yes             ; User VHDL File  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/clk_res_gen_entity.vhd  ;         ;
-; clk_res_gen_behav.vhd            ; yes             ; User VHDL File  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/clk_res_gen_behav.vhd   ;         ;
-; tb_entity.vhd                    ; yes             ; User VHDL File  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/tb_entity.vhd           ;         ;
-; tb_struct.vhd                    ; yes             ; User VHDL File  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/tb_struct.vhd           ;         ;
-; tester_input_entity.vhd          ; yes             ; User VHDL File  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/tester_input_entity.vhd ;         ;
-; tester_input_behav.vhd           ; yes             ; User VHDL File  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/tester_input_behav.vhd  ;         ;
-; tester_timer_entity.vhd          ; yes             ; User VHDL File  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/tester_timer_entity.vhd ;         ;
-; tester_timer_behav.vhd           ; yes             ; User VHDL File  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/tester_timer_behav.vhd  ;         ;
-; output_entity.vhd                ; yes             ; User VHDL File  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/output_entity.vhd       ;         ;
-; output_behav.vhd                 ; yes             ; User VHDL File  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/output_behav.vhd        ;         ;
-; control_entity.vhd               ; yes             ; User VHDL File  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/control_entity.vhd      ;         ;
-; control_behav.vhd                ; yes             ; User VHDL File  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/control_behav.vhd       ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                     ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                 ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
+; timer_behav.vhd                  ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/timer_behav.vhd                            ;         ;
+; timer_entity.vhd                 ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/timer_entity.vhd                           ;         ;
+; counter_entity.vhd               ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/counter_entity.vhd                         ;         ;
+; counter_behav.vhd                ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/counter_behav.vhd                          ;         ;
+; galois_entity.vhd                ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/galois_entity.vhd                          ;         ;
+; galois_behav.vhd                 ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/galois_behav.vhd                           ;         ;
+; input_entity.vhd                 ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/input_entity.vhd                           ;         ;
+; input_behav.vhd                  ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/input_behav.vhd                            ;         ;
+; button_behav.vhd                 ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/button_behav.vhd                           ;         ;
+; button_entity.vhd                ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/button_entity.vhd                          ;         ;
+; senso_entity.vhd                 ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/senso_entity.vhd                           ;         ;
+; clk_res_gen_entity.vhd           ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/clk_res_gen_entity.vhd                     ;         ;
+; clk_res_gen_behav.vhd            ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/clk_res_gen_behav.vhd                      ;         ;
+; tb_entity.vhd                    ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/tb_entity.vhd                              ;         ;
+; tb_struct.vhd                    ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/tb_struct.vhd                              ;         ;
+; tester_input_entity.vhd          ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/tester_input_entity.vhd                    ;         ;
+; tester_input_behav.vhd           ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/tester_input_behav.vhd                     ;         ;
+; tester_timer_entity.vhd          ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/tester_timer_entity.vhd                    ;         ;
+; tester_timer_behav.vhd           ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/tester_timer_behav.vhd                     ;         ;
+; output_entity.vhd                ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/output_entity.vhd                          ;         ;
+; output_behav.vhd                 ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/output_behav.vhd                           ;         ;
+; control_entity.vhd               ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/control_entity.vhd                         ;         ;
+; control_behav.vhd                ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/control_behav.vhd                          ;         ;
+; senso_struct.vhd                 ; yes             ; User VHDL File               ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/senso_struct.vhd                           ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; /home/mrpeanutbutter/intelFPGA_lite/19.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; /home/mrpeanutbutter/intelFPGA_lite/19.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; /home/mrpeanutbutter/intelFPGA_lite/19.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal191.inc                   ; yes             ; Megafunction                 ; /home/mrpeanutbutter/intelFPGA_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc      ;         ;
+; db/lpm_divide_a2m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_divide_a2m.tdf                      ;         ;
+; db/sign_div_unsign_dkh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/sign_div_unsign_dkh.tdf                 ;         ;
+; db/alt_u_div_0te.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/alt_u_div_0te.tdf                       ;         ;
+; db/lpm_divide_4am.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_divide_4am.tdf                      ;         ;
+; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/sign_div_unsign_akh.tdf                 ;         ;
+; db/alt_u_div_qse.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/alt_u_div_qse.tdf                       ;         ;
+; db/lpm_divide_epo.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_divide_epo.tdf                      ;         ;
+; db/abs_divider_nbg.tdf           ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/abs_divider_nbg.tdf                     ;         ;
+; db/alt_u_div_uve.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/alt_u_div_uve.tdf                       ;         ;
+; db/lpm_abs_nn9.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_abs_nn9.tdf                         ;         ;
+; db/lpm_abs_4p9.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_abs_4p9.tdf                         ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -208,45 +232,85 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 10        ;
+; Estimate of Logic utilization (ALMs needed) ; 488       ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 11        ;
-;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 0         ;
-;     -- 5 input functions                    ; 0         ;
-;     -- 4 input functions                    ; 3         ;
-;     -- <=3 input functions                  ; 8         ;
+; Combinational ALUT usage for logic          ; 931       ;
+;     -- 7 input functions                    ; 3         ;
+;     -- 6 input functions                    ; 40        ;
+;     -- 5 input functions                    ; 16        ;
+;     -- 4 input functions                    ; 228       ;
+;     -- <=3 input functions                  ; 644       ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 19        ;
+; Dedicated logic registers                   ; 125       ;
 ;                                             ;           ;
-; I/O pins                                    ; 9         ;
+; I/O pins                                    ; 24        ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 19        ;
-; Total fan-out                               ; 93        ;
-; Average fan-out                             ; 1.94      ;
+; Maximum fan-out                             ; 125       ;
+; Total fan-out                               ; 3364      ;
+; Average fan-out                             ; 3.05      ;
 +---------------------------------------------+-----------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name   ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------+-------------+--------------+
-; |input                     ; 11 (3)              ; 19 (3)                    ; 0                 ; 0          ; 9    ; 0            ; |input                ; input       ; work         ;
-;    |button:button1|        ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |input|button:button1 ; button      ; work         ;
-;    |button:button2|        ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |input|button:button2 ; button      ; work         ;
-;    |button:button3|        ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |input|button:button3 ; button      ; work         ;
-;    |button:button4|        ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |input|button:button4 ; button      ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------+-------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                    ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                          ; Entity Name         ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |senso                                    ; 931 (0)             ; 125 (0)                   ; 0                 ; 0          ; 24   ; 0            ; |senso                                                                                                                       ; senso               ; work         ;
+;    |control:senso_control|                ; 19 (19)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |senso|control:senso_control                                                                                                 ; control             ; work         ;
+;    |counter:senso_counter|                ; 129 (47)            ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter                                                                                                 ; counter             ; work         ;
+;       |lpm_divide:Div0|                   ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_4am:auto_generated|  ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Div0|lpm_divide_4am:auto_generated                                                   ; lpm_divide_4am      ; work         ;
+;             |sign_div_unsign_akh:divider| ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
+;                |alt_u_div_qse:divider|    ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider ; alt_u_div_qse       ; work         ;
+;       |lpm_divide:Mod0|                   ; 44 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_a2m:auto_generated|  ; 44 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Mod0|lpm_divide_a2m:auto_generated                                                   ; lpm_divide_a2m      ; work         ;
+;             |sign_div_unsign_dkh:divider| ; 44 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Mod0|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                       ; sign_div_unsign_dkh ; work         ;
+;                |alt_u_div_0te:divider|    ; 44 (44)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Mod0|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider ; alt_u_div_0te       ; work         ;
+;    |galois:senso_galois|                  ; 11 (11)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |senso|galois:senso_galois                                                                                                   ; galois              ; work         ;
+;    |input:senso_input|                    ; 11 (3)              ; 19 (3)                    ; 0                 ; 0          ; 0    ; 0            ; |senso|input:senso_input                                                                                                     ; input               ; work         ;
+;       |button:button1|                    ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|input:senso_input|button:button1                                                                                      ; button              ; work         ;
+;       |button:button2|                    ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|input:senso_input|button:button2                                                                                      ; button              ; work         ;
+;       |button:button3|                    ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|input:senso_input|button:button3                                                                                      ; button              ; work         ;
+;       |button:button4|                    ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|input:senso_input|button:button4                                                                                      ; button              ; work         ;
+;    |output:senso_output|                  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|output:senso_output                                                                                                   ; output              ; work         ;
+;    |timer:senso_timer|                    ; 760 (148)           ; 62 (62)                   ; 0                 ; 0          ; 0    ; 0            ; |senso|timer:senso_timer                                                                                                     ; timer               ; work         ;
+;       |lpm_divide:Div0|                   ; 612 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|timer:senso_timer|lpm_divide:Div0                                                                                     ; lpm_divide          ; work         ;
+;          |lpm_divide_epo:auto_generated|  ; 612 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|timer:senso_timer|lpm_divide:Div0|lpm_divide_epo:auto_generated                                                       ; lpm_divide_epo      ; work         ;
+;             |abs_divider_nbg:divider|     ; 612 (28)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|timer:senso_timer|lpm_divide:Div0|lpm_divide_epo:auto_generated|abs_divider_nbg:divider                               ; abs_divider_nbg     ; work         ;
+;                |alt_u_div_uve:divider|    ; 552 (552)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|timer:senso_timer|lpm_divide:Div0|lpm_divide_epo:auto_generated|abs_divider_nbg:divider|alt_u_div_uve:divider         ; alt_u_div_uve       ; work         ;
+;                |lpm_abs_4p9:my_abs_num|   ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|timer:senso_timer|lpm_divide:Div0|lpm_divide_epo:auto_generated|abs_divider_nbg:divider|lpm_abs_4p9:my_abs_num        ; lpm_abs_4p9         ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |senso|control:senso_control|current_state                                                                                                                                                                                                                                                          ;
++---------------------------+--------------------+-----------------------+---------------------------+-----------------------+-------------------------+---------------------+-----------------------+----------------------+-------------------------+---------------------+--------------------+--------------------+
+; Name                      ; current_state.OVER ; current_state.LEVELUP ; current_state.LOCKCORRECT ; current_state.CORRECT ; current_state.STARTPLAY ; current_state.LEDON ; current_state.COMPARE ; current_state.LEDOFF ; current_state.STARTSHOW ; current_state.READY ; current_state.INIT ; current_state.IDLE ;
++---------------------------+--------------------+-----------------------+---------------------------+-----------------------+-------------------------+---------------------+-----------------------+----------------------+-------------------------+---------------------+--------------------+--------------------+
+; current_state.IDLE        ; 0                  ; 0                     ; 0                         ; 0                     ; 0                       ; 0                   ; 0                     ; 0                    ; 0                       ; 0                   ; 0                  ; 0                  ;
+; current_state.INIT        ; 0                  ; 0                     ; 0                         ; 0                     ; 0                       ; 0                   ; 0                     ; 0                    ; 0                       ; 0                   ; 1                  ; 1                  ;
+; current_state.READY       ; 0                  ; 0                     ; 0                         ; 0                     ; 0                       ; 0                   ; 0                     ; 0                    ; 0                       ; 1                   ; 0                  ; 1                  ;
+; current_state.STARTSHOW   ; 0                  ; 0                     ; 0                         ; 0                     ; 0                       ; 0                   ; 0                     ; 0                    ; 1                       ; 0                   ; 0                  ; 1                  ;
+; current_state.LEDOFF      ; 0                  ; 0                     ; 0                         ; 0                     ; 0                       ; 0                   ; 0                     ; 1                    ; 0                       ; 0                   ; 0                  ; 1                  ;
+; current_state.COMPARE     ; 0                  ; 0                     ; 0                         ; 0                     ; 0                       ; 0                   ; 1                     ; 0                    ; 0                       ; 0                   ; 0                  ; 1                  ;
+; current_state.LEDON       ; 0                  ; 0                     ; 0                         ; 0                     ; 0                       ; 1                   ; 0                     ; 0                    ; 0                       ; 0                   ; 0                  ; 1                  ;
+; current_state.STARTPLAY   ; 0                  ; 0                     ; 0                         ; 0                     ; 1                       ; 0                   ; 0                     ; 0                    ; 0                       ; 0                   ; 0                  ; 1                  ;
+; current_state.CORRECT     ; 0                  ; 0                     ; 0                         ; 1                     ; 0                       ; 0                   ; 0                     ; 0                    ; 0                       ; 0                   ; 0                  ; 1                  ;
+; current_state.LOCKCORRECT ; 0                  ; 0                     ; 1                         ; 0                     ; 0                       ; 0                   ; 0                     ; 0                    ; 0                       ; 0                   ; 0                  ; 1                  ;
+; current_state.LEVELUP     ; 0                  ; 1                     ; 0                         ; 0                     ; 0                       ; 0                   ; 0                     ; 0                    ; 0                       ; 0                   ; 0                  ; 1                  ;
+; current_state.OVER        ; 1                  ; 0                     ; 0                         ; 0                     ; 0                       ; 0                   ; 0                     ; 0                    ; 0                       ; 0                   ; 0                  ; 1                  ;
++---------------------------+--------------------+-----------------------+---------------------------+-----------------------+-------------------------+---------------------+-----------------------+----------------------+-------------------------+---------------------+--------------------+--------------------+
+
+
+Encoding Type:  One-Hot
 +-----------------------------------------------------------------------------------------------------------------------+
-; State Machine - |input|button:button4|current_state                                                                   ;
+; State Machine - |senso|input:senso_input|button:button4|current_state                                                 ;
 +---------------------------------+------------------------------+---------------------------------+--------------------+
 ; Name                            ; current_state.PRESSED_LONGER ; current_state.PRESSED_ONE_CYCLE ; current_state.IDLE ;
 +---------------------------------+------------------------------+---------------------------------+--------------------+
@@ -258,7 +322,7 @@ Encoding Type:  One-Hot
 
 Encoding Type:  One-Hot
 +-----------------------------------------------------------------------------------------------------------------------+
-; State Machine - |input|button:button3|current_state                                                                   ;
+; State Machine - |senso|input:senso_input|button:button3|current_state                                                 ;
 +---------------------------------+------------------------------+---------------------------------+--------------------+
 ; Name                            ; current_state.PRESSED_LONGER ; current_state.PRESSED_ONE_CYCLE ; current_state.IDLE ;
 +---------------------------------+------------------------------+---------------------------------+--------------------+
@@ -270,7 +334,7 @@ Encoding Type:  One-Hot
 
 Encoding Type:  One-Hot
 +-----------------------------------------------------------------------------------------------------------------------+
-; State Machine - |input|button:button2|current_state                                                                   ;
+; State Machine - |senso|input:senso_input|button:button2|current_state                                                 ;
 +---------------------------------+------------------------------+---------------------------------+--------------------+
 ; Name                            ; current_state.PRESSED_LONGER ; current_state.PRESSED_ONE_CYCLE ; current_state.IDLE ;
 +---------------------------------+------------------------------+---------------------------------+--------------------+
@@ -282,7 +346,7 @@ Encoding Type:  One-Hot
 
 Encoding Type:  One-Hot
 +-----------------------------------------------------------------------------------------------------------------------+
-; State Machine - |input|button:button1|current_state                                                                   ;
+; State Machine - |senso|input:senso_input|button:button1|current_state                                                 ;
 +---------------------------------+------------------------------+---------------------------------+--------------------+
 ; Name                            ; current_state.PRESSED_LONGER ; current_state.PRESSED_ONE_CYCLE ; current_state.IDLE ;
 +---------------------------------+------------------------------+---------------------------------+--------------------+
@@ -292,17 +356,18 @@ Encoding Type:  One-Hot
 +---------------------------------+------------------------------+---------------------------------+--------------------+
 
 
-+------------------------------------------------------------------+
-; Registers Removed During Synthesis                               ;
-+---------------------------------------------+--------------------+
-; Register name                               ; Reason for Removal ;
-+---------------------------------------------+--------------------+
-; button:button4|current_state.PRESSED_LONGER ; Lost fanout        ;
-; button:button3|current_state.PRESSED_LONGER ; Lost fanout        ;
-; button:button2|current_state.PRESSED_LONGER ; Lost fanout        ;
-; button:button1|current_state.PRESSED_LONGER ; Lost fanout        ;
-; Total Number of Removed Registers = 4       ;                    ;
-+---------------------------------------------+--------------------+
++------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                     ;
++---------------------------------------------------------------+--------------------------------------------------------+
+; Register name                                                 ; Reason for Removal                                     ;
++---------------------------------------------------------------+--------------------------------------------------------+
+; input:senso_input|button:button4|current_state.PRESSED_LONGER ; Lost fanout                                            ;
+; input:senso_input|button:button3|current_state.PRESSED_LONGER ; Lost fanout                                            ;
+; input:senso_input|button:button2|current_state.PRESSED_LONGER ; Lost fanout                                            ;
+; input:senso_input|button:button1|current_state.PRESSED_LONGER ; Lost fanout                                            ;
+; timer:senso_timer|\run_timer:max_ticks[28..30]                ; Merged with timer:senso_timer|\run_timer:max_ticks[27] ;
+; Total Number of Removed Registers = 7                         ;                                                        ;
++---------------------------------------------------------------+--------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -310,14 +375,116 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 19    ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 19    ;
+; Total registers                              ; 125   ;
+; Number of registers using Synchronous Clear  ; 43    ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 109   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 53    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Inverted Register Statistics                        ;
++-------------------------------------------+---------+
+; Inverted Register                         ; Fan out ;
++-------------------------------------------+---------+
+; timer:senso_timer|\run_timer:max_ticks[2] ; 3       ;
+; timer:senso_timer|\run_timer:max_ticks[6] ; 3       ;
+; timer:senso_timer|\run_timer:max_ticks[5] ; 3       ;
+; galois:senso_galois|\galois:sr[0]         ; 2       ;
+; galois:senso_galois|\galois:mr[0]         ; 1       ;
+; Total number of inverted registers = 5    ;         ;
++-------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+; 3:1                ; 30 bits   ; 60 LEs        ; 0 LEs                ; 60 LEs                 ; Yes        ; |senso|timer:senso_timer|\run_timer:ticks[7]             ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |senso|counter:senso_counter|\counter_score:score_int[1] ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |senso|counter:senso_counter|\counter_step:step_int[6]   ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |senso|timer:senso_timer|\run_timer:ticks[31]            ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |senso|timer:senso_timer|max_ticks                       ;
+; 3:1                ; 27 bits   ; 54 LEs        ; 54 LEs               ; 0 LEs                  ; No         ; |senso|timer:senso_timer|max_ticks                       ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |senso|output:senso_output|leds[2]                       ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |senso|galois:senso_galois|sr                            ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |senso|control:senso_control|Selector7                   ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |senso|control:senso_control|Selector8                   ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; No         ; |senso|control:senso_control|Selector0                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: counter:senso_counter|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                      ;
+; LPM_WIDTHD             ; 7              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_a2m ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: counter:senso_counter|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                      ;
+; LPM_WIDTHD             ; 4              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_4am ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: timer:senso_timer|lpm_divide:Div0 ;
++------------------------+----------------+------------------------------------------+
+; Parameter Name         ; Value          ; Type                                     ;
++------------------------+----------------+------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                  ;
+; LPM_WIDTHD             ; 8              ; Untyped                                  ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                  ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                  ;
+; LPM_PIPELINE           ; 0              ; Untyped                                  ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                  ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                  ;
+; CBXI_PARAMETER         ; lpm_divide_epo ; Untyped                                  ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                  ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                  ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                             ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                           ;
++------------------------+----------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------+
@@ -325,17 +492,36 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 19                          ;
-;     CLR               ; 19                          ;
-; arriav_lcell_comb     ; 11                          ;
-;     normal            ; 11                          ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 4                           ;
-;         4 data inputs ; 3                           ;
-; boundary_port         ; 9                           ;
+; arriav_ff             ; 125                         ;
+;     CLR               ; 71                          ;
+;     ENA               ; 2                           ;
+;     ENA CLR           ; 8                           ;
+;     ENA CLR SCLR      ; 30                          ;
+;     ENA SCLR          ; 13                          ;
+;     SLD               ; 1                           ;
+; arriav_lcell_comb     ; 933                         ;
+;     arith             ; 451                         ;
+;         0 data inputs ; 65                          ;
+;         1 data inputs ; 107                         ;
+;         2 data inputs ; 60                          ;
+;         3 data inputs ; 117                         ;
+;         4 data inputs ; 102                         ;
+;     extend            ; 3                           ;
+;         7 data inputs ; 3                           ;
+;     normal            ; 461                         ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 232                         ;
+;         3 data inputs ; 41                          ;
+;         4 data inputs ; 126                         ;
+;         5 data inputs ; 16                          ;
+;         6 data inputs ; 40                          ;
+;     shared            ; 18                          ;
+;         0 data inputs ; 3                           ;
+;         1 data inputs ; 15                          ;
+; boundary_port         ; 24                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 0.75                        ;
+; Max LUT depth         ; 62.10                       ;
+; Average LUT depth     ; 43.67                       ;
 +-----------------------+-----------------------------+
 
 
@@ -344,7 +530,7 @@ Encoding Type:  One-Hot
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -354,7 +540,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue Jan  7 22:06:21 2020
+    Info: Processing started: Wed Jan  8 18:20:23 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Senso -c Senso
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -404,21 +590,89 @@ Info (12021): Found 1 design units, including 1 entities, in source file control
     Info (12023): Found entity 1: control File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/control_entity.vhd Line: 3
 Info (12021): Found 1 design units, including 0 entities, in source file control_behav.vhd
     Info (12022): Found design unit 1: control-behav File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/control_behav.vhd Line: 3
-Info (12127): Elaborating entity "input" for the top level hierarchy
-Info (12128): Elaborating entity "button" for hierarchy "button:button1" File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/input_behav.vhd Line: 6
+Info (12021): Found 1 design units, including 0 entities, in source file senso_struct.vhd
+    Info (12022): Found design unit 1: senso-struct File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/senso_struct.vhd Line: 5
+Info (12127): Elaborating entity "senso" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at senso_struct.vhd(29): used implicit default value for signal "color_int" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/senso_struct.vhd Line: 29
+Info (12128): Elaborating entity "input" for hierarchy "input:senso_input" File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/senso_struct.vhd Line: 34
+Info (12128): Elaborating entity "button" for hierarchy "input:senso_input|button:button1" File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/input_behav.vhd Line: 6
 Warning (10492): VHDL Process Statement warning at button_behav.vhd(39): signal "current_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/button_behav.vhd Line: 39
+Info (12128): Elaborating entity "timer" for hierarchy "timer:senso_timer" File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/senso_struct.vhd Line: 38
+Warning (10036): Verilog HDL or VHDL warning at timer_behav.vhd(5): object "timer_on" assigned a value but never read File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/timer_behav.vhd Line: 5
+Warning (10036): Verilog HDL or VHDL warning at timer_behav.vhd(9): object "waitfortimertoexpire" assigned a value but never read File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/timer_behav.vhd Line: 9
+Info (12128): Elaborating entity "galois" for hierarchy "galois:senso_galois" File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/senso_struct.vhd Line: 42
+Warning (10542): VHDL Variable Declaration warning at galois_behav.vhd(7): used initial value expression for variable "fb" because variable was never assigned a value File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/galois_behav.vhd Line: 7
+Warning (10542): VHDL Variable Declaration warning at galois_behav.vhd(8): used initial value expression for variable "seed" because variable was never assigned a value File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/galois_behav.vhd Line: 8
+Info (12128): Elaborating entity "counter" for hierarchy "counter:senso_counter" File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/senso_struct.vhd Line: 44
+Warning (10036): Verilog HDL or VHDL warning at counter_behav.vhd(52): object "score_var" assigned a value but never read File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/counter_behav.vhd Line: 52
+Info (12128): Elaborating entity "output" for hierarchy "output:senso_output" File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/senso_struct.vhd Line: 46
+Warning (10492): VHDL Process Statement warning at output_behav.vhd(10): signal "color" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/output_behav.vhd Line: 10
+Info (12128): Elaborating entity "control" for hierarchy "control:senso_control" File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/senso_struct.vhd Line: 48
+Info (278001): Inferred 3 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "counter:senso_counter|Mod0" File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/counter_behav.vhd Line: 57
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "counter:senso_counter|Div0" File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/counter_behav.vhd Line: 58
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "timer:senso_timer|Div0" File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/timer_behav.vhd Line: 33
+Info (12130): Elaborated megafunction instantiation "counter:senso_counter|lpm_divide:Mod0" File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/counter_behav.vhd Line: 57
+Info (12133): Instantiated megafunction "counter:senso_counter|lpm_divide:Mod0" with the following parameter: File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/counter_behav.vhd Line: 57
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_a2m.tdf
+    Info (12023): Found entity 1: lpm_divide_a2m File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_divide_a2m.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_dkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_dkh File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/sign_div_unsign_dkh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_0te.tdf
+    Info (12023): Found entity 1: alt_u_div_0te File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/alt_u_div_0te.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "counter:senso_counter|lpm_divide:Div0" File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/counter_behav.vhd Line: 58
+Info (12133): Instantiated megafunction "counter:senso_counter|lpm_divide:Div0" with the following parameter: File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/counter_behav.vhd Line: 58
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_4am.tdf
+    Info (12023): Found entity 1: lpm_divide_4am File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_divide_4am.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_akh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_akh File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/sign_div_unsign_akh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qse.tdf
+    Info (12023): Found entity 1: alt_u_div_qse File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/alt_u_div_qse.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "timer:senso_timer|lpm_divide:Div0" File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/timer_behav.vhd Line: 33
+Info (12133): Instantiated megafunction "timer:senso_timer|lpm_divide:Div0" with the following parameter: File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/timer_behav.vhd Line: 33
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_epo.tdf
+    Info (12023): Found entity 1: lpm_divide_epo File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_divide_epo.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_nbg.tdf
+    Info (12023): Found entity 1: abs_divider_nbg File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/abs_divider_nbg.tdf Line: 29
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_uve.tdf
+    Info (12023): Found entity 1: alt_u_div_uve File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/alt_u_div_uve.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_nn9.tdf
+    Info (12023): Found entity 1: lpm_abs_nn9 File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_abs_nn9.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_4p9.tdf
+    Info (12023): Found entity 1: lpm_abs_4p9 File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_abs_4p9.tdf Line: 23
 Info (286030): Timing-Driven Synthesis is running
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register timer:senso_timer|\run_timer:ticks[0] will power up to Low
+    Critical Warning (18010): Register timer:senso_timer|\run_timer:max_ticks[0] will power up to Low
+    Critical Warning (18010): Register timer:senso_timer|\run_timer:max_ticks[2] will power up to High
+    Critical Warning (18010): Register timer:senso_timer|\run_timer:max_ticks[5] will power up to High
+    Critical Warning (18010): Register timer:senso_timer|\run_timer:max_ticks[6] will power up to High
+    Critical Warning (18010): Register timer:senso_timer|\run_timer:ticks[31] will power up to Low
+    Critical Warning (18010): Register timer:senso_timer|\run_timer:max_ticks[31] will power up to Low
 Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 28 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1015 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 3 output pins
-    Info (21061): Implemented 19 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 1056 megabytes
-    Info: Processing ended: Tue Jan  7 22:06:30 2020
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:23
+    Info (21059): Implemented 18 output pins
+    Info (21061): Implemented 991 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
+    Info: Peak virtual memory: 1089 megabytes
+    Info: Processing ended: Wed Jan  8 18:20:35 2020
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:27
 
 

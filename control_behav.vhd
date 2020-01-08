@@ -17,7 +17,7 @@ begin
 		end if;
 	end process state;
 	
-	output: process(clk, res_n) is
+	output: process(current_state) is
 	begin
 		case current_state is
 			when IDLE =>
@@ -27,15 +27,49 @@ begin
 				res_duration <= '1';
 				all_on <= '0';
 				start_timer <= '0';
+				-----
+				restore_rnd <= '0';
+				store_rnd <= '0';
+				start_timer <= '0';
+				dec_duration <= '0';
+				inc_step <= '0';
+				inc_score <= '0';
+				led_on <= '0';
+				all_on <= '0';
+				
 			when INIT =>
 				res_score <= '0';
 				res_step <= '0';
 				next_rnd <= '0';
 				store_rnd <= '1';
 				res_duration <= '0';
+				--
+				next_rnd <= '0';
+				restore_rnd <= '0';
+				start_timer <= '0';
+				dec_duration <= '0';
+				res_duration <= '0';
+				res_step <= '0';
+				inc_step <= '0';
+				res_score <= '0';
+				inc_score <= '0';
+				led_on <= '0';
+				all_on <= '0';
 			when READY =>
 				store_rnd <= '0';
 				restore_rnd <= '1';
+				--
+				next_rnd <= '0';
+				store_rnd <= '0';
+				start_timer <= '0';
+				dec_duration <= '0';
+				res_duration <= '0';
+				res_step <= '0';
+				inc_step <= '0';
+				res_score <= '0';
+				inc_score <= '0';
+				led_on <= '0';
+				all_on <= '0';
 			when STARTSHOW =>
 				led_on <= '1';
 				start_timer <= '1';
@@ -43,44 +77,147 @@ begin
 				dec_duration <= '0';
 				restore_rnd <= '0';
 				inc_score <= '0';
+				--
+				next_rnd <= '0';
+				restore_rnd <= '0';
+				store_rnd <= '0';
+				dec_duration <= '0';
+				res_duration <= '0';
+				res_step <= '0';
+				inc_step <= '0';
+				res_score <= '0';
+				inc_score <= '0';
+				all_on <= '0';
 			when LEDOFF =>
 				led_on <= '0';
 				start_timer <= '0';
 				inc_step <= '1';
 				next_rnd <= '1';
+				--
+				restore_rnd <= '0';
+				store_rnd <= '0';
+				start_timer <= '0';
+				dec_duration <= '0';
+				res_duration <= '0';
+				res_step <= '0';
+				res_score <= '0';
+				inc_score <= '0';
+				led_on <= '0';
+				all_on <= '0';
 			when COMPARE =>
 				inc_step <= '0';
 				next_rnd <= '0';
+				--
+				next_rnd <= '0';
+				restore_rnd <= '0';
+				store_rnd <= '0';
+				start_timer <= '0';
+				dec_duration <= '0';
+				res_duration <= '0';
+				res_step <= '0';
+				inc_step <= '0';
+				res_score <= '0';
+				inc_score <= '0';
+				led_on <= '0';
+				all_on <= '0';
 			when LEDON =>
 				led_on <= '1';
 				start_timer <= '1';
+				--
+				next_rnd <= '0';
+				restore_rnd <= '0';
+				store_rnd <= '0';
+				dec_duration <= '0';
+				res_duration <= '0';
+				res_step <= '0';
+				inc_step <= '0';
+				res_score <= '0';
+				inc_score <= '0';
+				all_on <= '0';
 			when STARTPLAY =>
 				res_step <= '1';
 				inc_step <= '0';
 				next_rnd <= '0';
 				restore_rnd <= '1';
+				--
+				next_rnd <= '0';
+				store_rnd <= '0';
+				start_timer <= '0';
+				dec_duration <= '0';
+				res_duration <= '0';
+				inc_step <= '0';
+				res_score <= '0';
+				inc_score <= '0';
+				led_on <= '0';
+				all_on <= '0';
 			when CORRECT =>
 				res_step <= '0';
 				restore_rnd <= '0';
 				inc_step <= '1';
 				next_rnd <= '1';
+				--
+				restore_rnd <= '0';
+				store_rnd <= '0';
+				start_timer <= '0';
+				dec_duration <= '0';
+				res_duration <= '0';
+				res_step <= '0';
+				res_score <= '0';
+				inc_score <= '0';
+				led_on <= '0';
+				all_on <= '0';
 			when LOCKCORRECT =>
 				inc_step <= '0';
 				next_rnd <= '0';
+				--
+				next_rnd <= '0';
+				restore_rnd <= '0';
+				store_rnd <= '0';
+				start_timer <= '0';
+				dec_duration <= '0';
+				res_duration <= '0';
+				res_step <= '0';
+				inc_step <= '0';
+				res_score <= '0';
+				inc_score <= '0';
+				led_on <= '0';
+				all_on <= '0';
 			when LEVELUP =>
 				inc_score <= '1';
 				dec_duration <= '1';
 				res_step <= '1';
+				--
+				next_rnd <= '0';
+				restore_rnd <= '0';
+				store_rnd <= '0';
+				start_timer <= '0';
+				res_duration <= '0';
+				inc_step <= '0';
+				res_score <= '0';
+				led_on <= '0';
+				all_on <= '0';
 			when OVER =>
 				all_on <= '1';
 				start_timer <= '1';
 				restore_rnd <= '0';
+				--
+				next_rnd <= '0';
+				restore_rnd <= '0';
+				store_rnd <= '0';
+				dec_duration <= '0';
+				res_duration <= '0';
+				res_step <= '0';
+				inc_step <= '0';
+				res_score <= '0';
+				inc_score <= '0';
+				led_on <= '0';
 		end case;
 	end process output;
 	
 	
 	transition: process(current_state, key_valid, timer_expired, step_eq_score, key_color, rnd) is
 	begin
+		next_state <= current_state;
 		case current_state is
 			when IDLE => 
 				if key_valid = '1' then next_state <= INIT; end if;
