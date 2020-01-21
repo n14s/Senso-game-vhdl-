@@ -14,8 +14,8 @@ begin
 			ticks := 0;
 			level := 0;
 			waitfortimertoexpire :=0;
-			--max_ticks := 25000000;
-			max_ticks := 100;
+			max_ticks := 25000000;
+			--max_ticks := 100;
 		else
 			if clk'event and clk = '1' then
 				-- reset possible timer expired signal
@@ -26,8 +26,8 @@ begin
 --				end if;
 				
 				if res_duration = '1' then
-					--max_ticks := 25000000;
-					max_ticks := 100;
+					max_ticks := 25000000;
+					--max_ticks := 100;
 				elsif dec_duration = '1' then
 					-- maxtime = maxtime - (100ms/1+x) =>>  100ms =>> 100000000ns  /  20ns  per takt/tick  =  5000000 ticks
 					max_ticks := max_ticks * 80 / 100;

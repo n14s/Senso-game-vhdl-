@@ -53,11 +53,15 @@ begin
 	variable score_low_b, score_high_b:			std_logic_vector(6 downto 0);
 	begin
 	score_var := score_sig - 1;
-		if score_sig >= 10 then
-			score_low_int := score_sig mod 10;
-			score_high_int := score_sig / 10;
+		if score_var >= 10 then
+			score_low_int := score_var mod 10;
+			score_high_int := score_var / 10;
 		else
-			score_low_int := score_sig;
+			if score_var = -1 then
+				score_low_int := 0;
+			else 
+				score_low_int := score_var;
+			end if;
 			score_high_int := 0;
 		end if;
 	

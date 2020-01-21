@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Senso
-Wed Jan  8 18:20:34 2020
+Mon Jan 13 15:56:53 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -54,7 +54,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Jan  8 18:20:34 2020       ;
+; Analysis & Synthesis Status     ; Successful - Mon Jan 13 15:56:53 2020       ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; Senso                                       ;
 ; Top-level Entity Name           ; senso                                       ;
@@ -213,16 +213,17 @@ https://fpgasoftware.intel.com/eula.
 ; abs_divider.inc                  ; yes             ; Megafunction                 ; /home/mrpeanutbutter/intelFPGA_lite/19.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
 ; sign_div_unsign.inc              ; yes             ; Megafunction                 ; /home/mrpeanutbutter/intelFPGA_lite/19.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
 ; aglobal191.inc                   ; yes             ; Megafunction                 ; /home/mrpeanutbutter/intelFPGA_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc      ;         ;
-; db/lpm_divide_a2m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_divide_a2m.tdf                      ;         ;
-; db/sign_div_unsign_dkh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/sign_div_unsign_dkh.tdf                 ;         ;
-; db/alt_u_div_0te.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/alt_u_div_0te.tdf                       ;         ;
-; db/lpm_divide_4am.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_divide_4am.tdf                      ;         ;
-; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/sign_div_unsign_akh.tdf                 ;         ;
-; db/alt_u_div_qse.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/alt_u_div_qse.tdf                       ;         ;
+; db/lpm_divide_4go.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_divide_4go.tdf                      ;         ;
+; db/abs_divider_aag.tdf           ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/abs_divider_aag.tdf                     ;         ;
+; db/alt_u_div_4te.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/alt_u_div_4te.tdf                       ;         ;
+; db/lpm_abs_nn9.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_abs_nn9.tdf                         ;         ;
+; db/lpm_divide_uno.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_divide_uno.tdf                      ;         ;
+; db/abs_divider_7ag.tdf           ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/abs_divider_7ag.tdf                     ;         ;
+; db/alt_u_div_use.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/alt_u_div_use.tdf                       ;         ;
+; db/lpm_abs_kn9.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_abs_kn9.tdf                         ;         ;
 ; db/lpm_divide_epo.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_divide_epo.tdf                      ;         ;
 ; db/abs_divider_nbg.tdf           ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/abs_divider_nbg.tdf                     ;         ;
 ; db/alt_u_div_uve.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/alt_u_div_uve.tdf                       ;         ;
-; db/lpm_abs_nn9.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_abs_nn9.tdf                         ;         ;
 ; db/lpm_abs_4p9.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_abs_4p9.tdf                         ;         ;
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
 
@@ -232,14 +233,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 488       ;
+; Estimate of Logic utilization (ALMs needed) ; 533       ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 931       ;
-;     -- 7 input functions                    ; 3         ;
-;     -- 6 input functions                    ; 40        ;
-;     -- 5 input functions                    ; 16        ;
-;     -- 4 input functions                    ; 228       ;
-;     -- <=3 input functions                  ; 644       ;
+; Combinational ALUT usage for logic          ; 1017      ;
+;     -- 7 input functions                    ; 1         ;
+;     -- 6 input functions                    ; 45        ;
+;     -- 5 input functions                    ; 33        ;
+;     -- 4 input functions                    ; 238       ;
+;     -- <=3 input functions                  ; 700       ;
 ;                                             ;           ;
 ; Dedicated logic registers                   ; 125       ;
 ;                                             ;           ;
@@ -249,41 +250,43 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 125       ;
-; Total fan-out                               ; 3364      ;
-; Average fan-out                             ; 3.05      ;
+; Total fan-out                               ; 3636      ;
+; Average fan-out                             ; 3.06      ;
 +---------------------------------------------+-----------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                    ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                          ; Entity Name         ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |senso                                    ; 931 (0)             ; 125 (0)                   ; 0                 ; 0          ; 24   ; 0            ; |senso                                                                                                                       ; senso               ; work         ;
-;    |control:senso_control|                ; 19 (19)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |senso|control:senso_control                                                                                                 ; control             ; work         ;
-;    |counter:senso_counter|                ; 129 (47)            ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter                                                                                                 ; counter             ; work         ;
-;       |lpm_divide:Div0|                   ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_4am:auto_generated|  ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Div0|lpm_divide_4am:auto_generated                                                   ; lpm_divide_4am      ; work         ;
-;             |sign_div_unsign_akh:divider| ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
-;                |alt_u_div_qse:divider|    ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider ; alt_u_div_qse       ; work         ;
-;       |lpm_divide:Mod0|                   ; 44 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_a2m:auto_generated|  ; 44 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Mod0|lpm_divide_a2m:auto_generated                                                   ; lpm_divide_a2m      ; work         ;
-;             |sign_div_unsign_dkh:divider| ; 44 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Mod0|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                       ; sign_div_unsign_dkh ; work         ;
-;                |alt_u_div_0te:divider|    ; 44 (44)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Mod0|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider ; alt_u_div_0te       ; work         ;
-;    |galois:senso_galois|                  ; 11 (11)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |senso|galois:senso_galois                                                                                                   ; galois              ; work         ;
-;    |input:senso_input|                    ; 11 (3)              ; 19 (3)                    ; 0                 ; 0          ; 0    ; 0            ; |senso|input:senso_input                                                                                                     ; input               ; work         ;
-;       |button:button1|                    ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|input:senso_input|button:button1                                                                                      ; button              ; work         ;
-;       |button:button2|                    ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|input:senso_input|button:button2                                                                                      ; button              ; work         ;
-;       |button:button3|                    ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|input:senso_input|button:button3                                                                                      ; button              ; work         ;
-;       |button:button4|                    ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|input:senso_input|button:button4                                                                                      ; button              ; work         ;
-;    |output:senso_output|                  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|output:senso_output                                                                                                   ; output              ; work         ;
-;    |timer:senso_timer|                    ; 760 (148)           ; 62 (62)                   ; 0                 ; 0          ; 0    ; 0            ; |senso|timer:senso_timer                                                                                                     ; timer               ; work         ;
-;       |lpm_divide:Div0|                   ; 612 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|timer:senso_timer|lpm_divide:Div0                                                                                     ; lpm_divide          ; work         ;
-;          |lpm_divide_epo:auto_generated|  ; 612 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|timer:senso_timer|lpm_divide:Div0|lpm_divide_epo:auto_generated                                                       ; lpm_divide_epo      ; work         ;
-;             |abs_divider_nbg:divider|     ; 612 (28)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|timer:senso_timer|lpm_divide:Div0|lpm_divide_epo:auto_generated|abs_divider_nbg:divider                               ; abs_divider_nbg     ; work         ;
-;                |alt_u_div_uve:divider|    ; 552 (552)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|timer:senso_timer|lpm_divide:Div0|lpm_divide_epo:auto_generated|abs_divider_nbg:divider|alt_u_div_uve:divider         ; alt_u_div_uve       ; work         ;
-;                |lpm_abs_4p9:my_abs_num|   ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|timer:senso_timer|lpm_divide:Div0|lpm_divide_epo:auto_generated|abs_divider_nbg:divider|lpm_abs_4p9:my_abs_num        ; lpm_abs_4p9         ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                            ;
++------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                       ; Entity Name     ; Library Name ;
++------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |senso                                   ; 1017 (0)            ; 125 (0)                   ; 0                 ; 0          ; 24   ; 0            ; |senso                                                                                                                    ; senso           ; work         ;
+;    |control:senso_control|               ; 19 (19)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |senso|control:senso_control                                                                                              ; control         ; work         ;
+;    |counter:senso_counter|               ; 216 (62)            ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter                                                                                              ; counter         ; work         ;
+;       |lpm_divide:Div0|                  ; 71 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Div0                                                                              ; lpm_divide      ; work         ;
+;          |lpm_divide_uno:auto_generated| ; 71 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Div0|lpm_divide_uno:auto_generated                                                ; lpm_divide_uno  ; work         ;
+;             |abs_divider_7ag:divider|    ; 71 (4)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Div0|lpm_divide_uno:auto_generated|abs_divider_7ag:divider                        ; abs_divider_7ag ; work         ;
+;                |alt_u_div_use:divider|   ; 59 (59)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Div0|lpm_divide_uno:auto_generated|abs_divider_7ag:divider|alt_u_div_use:divider  ; alt_u_div_use   ; work         ;
+;                |lpm_abs_nn9:my_abs_num|  ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Div0|lpm_divide_uno:auto_generated|abs_divider_7ag:divider|lpm_abs_nn9:my_abs_num ; lpm_abs_nn9     ; work         ;
+;       |lpm_divide:Mod0|                  ; 83 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Mod0                                                                              ; lpm_divide      ; work         ;
+;          |lpm_divide_4go:auto_generated| ; 83 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Mod0|lpm_divide_4go:auto_generated                                                ; lpm_divide_4go  ; work         ;
+;             |abs_divider_aag:divider|    ; 83 (4)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Mod0|lpm_divide_4go:auto_generated|abs_divider_aag:divider                        ; abs_divider_aag ; work         ;
+;                |alt_u_div_4te:divider|   ; 71 (71)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Mod0|lpm_divide_4go:auto_generated|abs_divider_aag:divider|alt_u_div_4te:divider  ; alt_u_div_4te   ; work         ;
+;                |lpm_abs_nn9:my_abs_num|  ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|counter:senso_counter|lpm_divide:Mod0|lpm_divide_4go:auto_generated|abs_divider_aag:divider|lpm_abs_nn9:my_abs_num ; lpm_abs_nn9     ; work         ;
+;    |galois:senso_galois|                 ; 11 (11)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |senso|galois:senso_galois                                                                                                ; galois          ; work         ;
+;    |input:senso_input|                   ; 11 (3)              ; 19 (3)                    ; 0                 ; 0          ; 0    ; 0            ; |senso|input:senso_input                                                                                                  ; input           ; work         ;
+;       |button:button1|                   ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|input:senso_input|button:button1                                                                                   ; button          ; work         ;
+;       |button:button2|                   ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|input:senso_input|button:button2                                                                                   ; button          ; work         ;
+;       |button:button3|                   ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|input:senso_input|button:button3                                                                                   ; button          ; work         ;
+;       |button:button4|                   ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|input:senso_input|button:button4                                                                                   ; button          ; work         ;
+;    |output:senso_output|                 ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|output:senso_output                                                                                                ; output          ; work         ;
+;    |timer:senso_timer|                   ; 759 (147)           ; 62 (62)                   ; 0                 ; 0          ; 0    ; 0            ; |senso|timer:senso_timer                                                                                                  ; timer           ; work         ;
+;       |lpm_divide:Div0|                  ; 612 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|timer:senso_timer|lpm_divide:Div0                                                                                  ; lpm_divide      ; work         ;
+;          |lpm_divide_epo:auto_generated| ; 612 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|timer:senso_timer|lpm_divide:Div0|lpm_divide_epo:auto_generated                                                    ; lpm_divide_epo  ; work         ;
+;             |abs_divider_nbg:divider|    ; 612 (28)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|timer:senso_timer|lpm_divide:Div0|lpm_divide_epo:auto_generated|abs_divider_nbg:divider                            ; abs_divider_nbg ; work         ;
+;                |alt_u_div_uve:divider|   ; 552 (552)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|timer:senso_timer|lpm_divide:Div0|lpm_divide_epo:auto_generated|abs_divider_nbg:divider|alt_u_div_uve:divider      ; alt_u_div_uve   ; work         ;
+;                |lpm_abs_4p9:my_abs_num|  ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |senso|timer:senso_timer|lpm_divide:Div0|lpm_divide_epo:auto_generated|abs_divider_nbg:divider|lpm_abs_4p9:my_abs_num     ; lpm_abs_4p9     ; work         ;
++------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -385,18 +388,27 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------+
-; Inverted Register Statistics                        ;
-+-------------------------------------------+---------+
-; Inverted Register                         ; Fan out ;
-+-------------------------------------------+---------+
-; timer:senso_timer|\run_timer:max_ticks[2] ; 3       ;
-; timer:senso_timer|\run_timer:max_ticks[6] ; 3       ;
-; timer:senso_timer|\run_timer:max_ticks[5] ; 3       ;
-; galois:senso_galois|\galois:sr[0]         ; 2       ;
-; galois:senso_galois|\galois:mr[0]         ; 1       ;
-; Total number of inverted registers = 5    ;         ;
-+-------------------------------------------+---------+
++------------------------------------------------------+
+; Inverted Register Statistics                         ;
++--------------------------------------------+---------+
+; Inverted Register                          ; Fan out ;
++--------------------------------------------+---------+
+; timer:senso_timer|\run_timer:max_ticks[24] ; 3       ;
+; timer:senso_timer|\run_timer:max_ticks[16] ; 3       ;
+; timer:senso_timer|\run_timer:max_ticks[22] ; 3       ;
+; timer:senso_timer|\run_timer:max_ticks[19] ; 3       ;
+; timer:senso_timer|\run_timer:max_ticks[13] ; 3       ;
+; timer:senso_timer|\run_timer:max_ticks[6]  ; 3       ;
+; timer:senso_timer|\run_timer:max_ticks[11] ; 3       ;
+; timer:senso_timer|\run_timer:max_ticks[12] ; 3       ;
+; timer:senso_timer|\run_timer:max_ticks[21] ; 3       ;
+; timer:senso_timer|\run_timer:max_ticks[14] ; 3       ;
+; timer:senso_timer|\run_timer:max_ticks[18] ; 3       ;
+; timer:senso_timer|\run_timer:max_ticks[20] ; 3       ;
+; galois:senso_galois|\galois:sr[0]          ; 2       ;
+; galois:senso_galois|\galois:mr[0]          ; 1       ;
+; Total number of inverted registers = 14    ;         ;
++--------------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -404,17 +416,18 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
-; 3:1                ; 30 bits   ; 60 LEs        ; 0 LEs                ; 60 LEs                 ; Yes        ; |senso|timer:senso_timer|\run_timer:ticks[7]             ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 0 LEs                ; 60 LEs                 ; Yes        ; |senso|timer:senso_timer|\run_timer:ticks[27]            ;
 ; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |senso|counter:senso_counter|\counter_score:score_int[1] ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |senso|counter:senso_counter|\counter_step:step_int[6]   ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |senso|counter:senso_counter|\counter_step:step_int[5]   ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |senso|timer:senso_timer|\run_timer:ticks[31]            ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |senso|timer:senso_timer|max_ticks                       ;
-; 3:1                ; 27 bits   ; 54 LEs        ; 54 LEs               ; 0 LEs                  ; No         ; |senso|timer:senso_timer|max_ticks                       ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |senso|output:senso_output|leds[2]                       ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |senso|timer:senso_timer|max_ticks                       ;
+; 3:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |senso|timer:senso_timer|max_ticks                       ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |senso|output:senso_output|leds[1]                       ;
 ; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |senso|galois:senso_galois|sr                            ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |senso|control:senso_control|Selector7                   ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |senso|counter:senso_counter|\bin2bcd:score_low_int[3]   ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |senso|control:senso_control|Selector6                   ;
 ; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |senso|control:senso_control|Selector8                   ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; No         ; |senso|control:senso_control|Selector0                   ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; No         ; |senso|control:senso_control|Selector4                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
 
 
@@ -423,14 +436,14 @@ Encoding Type:  One-Hot
 +------------------------+----------------+----------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                         ;
 +------------------------+----------------+----------------------------------------------+
-; LPM_WIDTHN             ; 7              ; Untyped                                      ;
-; LPM_WIDTHD             ; 7              ; Untyped                                      ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_WIDTHN             ; 8              ; Untyped                                      ;
+; LPM_WIDTHD             ; 8              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                      ;
 ; LPM_PIPELINE           ; 0              ; Untyped                                      ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                      ;
 ; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
-; CBXI_PARAMETER         ; lpm_divide_a2m ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_4go ; Untyped                                      ;
 ; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
 ; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
 ; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
@@ -446,14 +459,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------+----------------+----------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                         ;
 +------------------------+----------------+----------------------------------------------+
-; LPM_WIDTHN             ; 7              ; Untyped                                      ;
-; LPM_WIDTHD             ; 4              ; Untyped                                      ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_WIDTHN             ; 8              ; Untyped                                      ;
+; LPM_WIDTHD             ; 5              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                      ;
 ; LPM_PIPELINE           ; 0              ; Untyped                                      ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                      ;
 ; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
-; CBXI_PARAMETER         ; lpm_divide_4am ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_uno ; Untyped                                      ;
 ; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
 ; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
 ; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
@@ -499,29 +512,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA CLR SCLR      ; 30                          ;
 ;     ENA SCLR          ; 13                          ;
 ;     SLD               ; 1                           ;
-; arriav_lcell_comb     ; 933                         ;
-;     arith             ; 451                         ;
-;         0 data inputs ; 65                          ;
-;         1 data inputs ; 107                         ;
-;         2 data inputs ; 60                          ;
-;         3 data inputs ; 117                         ;
-;         4 data inputs ; 102                         ;
-;     extend            ; 3                           ;
-;         7 data inputs ; 3                           ;
-;     normal            ; 461                         ;
+; arriav_lcell_comb     ; 1019                        ;
+;     arith             ; 503                         ;
+;         0 data inputs ; 72                          ;
+;         1 data inputs ; 120                         ;
+;         2 data inputs ; 74                          ;
+;         3 data inputs ; 120                         ;
+;         4 data inputs ; 117                         ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
+;     normal            ; 497                         ;
 ;         1 data inputs ; 6                           ;
-;         2 data inputs ; 232                         ;
-;         3 data inputs ; 41                          ;
-;         4 data inputs ; 126                         ;
-;         5 data inputs ; 16                          ;
-;         6 data inputs ; 40                          ;
+;         2 data inputs ; 253                         ;
+;         3 data inputs ; 39                          ;
+;         4 data inputs ; 121                         ;
+;         5 data inputs ; 33                          ;
+;         6 data inputs ; 45                          ;
 ;     shared            ; 18                          ;
 ;         0 data inputs ; 3                           ;
 ;         1 data inputs ; 15                          ;
 ; boundary_port         ; 24                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 62.10                       ;
-; Average LUT depth     ; 43.67                       ;
+; Average LUT depth     ; 41.90                       ;
 +-----------------------+-----------------------------+
 
 
@@ -540,7 +553,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Wed Jan  8 18:20:23 2020
+    Info: Processing started: Mon Jan 13 15:56:43 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Senso -c Senso
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -604,7 +617,6 @@ Info (12128): Elaborating entity "galois" for hierarchy "galois:senso_galois" Fi
 Warning (10542): VHDL Variable Declaration warning at galois_behav.vhd(7): used initial value expression for variable "fb" because variable was never assigned a value File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/galois_behav.vhd Line: 7
 Warning (10542): VHDL Variable Declaration warning at galois_behav.vhd(8): used initial value expression for variable "seed" because variable was never assigned a value File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/galois_behav.vhd Line: 8
 Info (12128): Elaborating entity "counter" for hierarchy "counter:senso_counter" File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/senso_struct.vhd Line: 44
-Warning (10036): Verilog HDL or VHDL warning at counter_behav.vhd(52): object "score_var" assigned a value but never read File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/counter_behav.vhd Line: 52
 Info (12128): Elaborating entity "output" for hierarchy "output:senso_output" File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/senso_struct.vhd Line: 46
 Warning (10492): VHDL Process Statement warning at output_behav.vhd(10): signal "color" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/output_behav.vhd Line: 10
 Info (12128): Elaborating entity "control" for hierarchy "control:senso_control" File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/senso_struct.vhd Line: 48
@@ -614,28 +626,34 @@ Info (278001): Inferred 3 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "timer:senso_timer|Div0" File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/timer_behav.vhd Line: 33
 Info (12130): Elaborated megafunction instantiation "counter:senso_counter|lpm_divide:Mod0" File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/counter_behav.vhd Line: 57
 Info (12133): Instantiated megafunction "counter:senso_counter|lpm_divide:Mod0" with the following parameter: File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/counter_behav.vhd Line: 57
-    Info (12134): Parameter "LPM_WIDTHN" = "7"
-    Info (12134): Parameter "LPM_WIDTHD" = "7"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_a2m.tdf
-    Info (12023): Found entity 1: lpm_divide_a2m File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_divide_a2m.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_dkh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_dkh File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/sign_div_unsign_dkh.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_0te.tdf
-    Info (12023): Found entity 1: alt_u_div_0te File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/alt_u_div_0te.tdf Line: 23
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_4go.tdf
+    Info (12023): Found entity 1: lpm_divide_4go File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_divide_4go.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_aag.tdf
+    Info (12023): Found entity 1: abs_divider_aag File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/abs_divider_aag.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_4te.tdf
+    Info (12023): Found entity 1: alt_u_div_4te File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/alt_u_div_4te.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_nn9.tdf
+    Info (12023): Found entity 1: lpm_abs_nn9 File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_abs_nn9.tdf Line: 23
 Info (12130): Elaborated megafunction instantiation "counter:senso_counter|lpm_divide:Div0" File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/counter_behav.vhd Line: 58
 Info (12133): Instantiated megafunction "counter:senso_counter|lpm_divide:Div0" with the following parameter: File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/counter_behav.vhd Line: 58
-    Info (12134): Parameter "LPM_WIDTHN" = "7"
-    Info (12134): Parameter "LPM_WIDTHD" = "4"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_4am.tdf
-    Info (12023): Found entity 1: lpm_divide_4am File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_divide_4am.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_akh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_akh File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/sign_div_unsign_akh.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qse.tdf
-    Info (12023): Found entity 1: alt_u_div_qse File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/alt_u_div_qse.tdf Line: 23
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_uno.tdf
+    Info (12023): Found entity 1: lpm_divide_uno File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_divide_uno.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_7ag.tdf
+    Info (12023): Found entity 1: abs_divider_7ag File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/abs_divider_7ag.tdf Line: 29
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_use.tdf
+    Info (12023): Found entity 1: alt_u_div_use File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/alt_u_div_use.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_kn9.tdf
+    Info (12023): Found entity 1: lpm_abs_kn9 File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_abs_kn9.tdf Line: 23
 Info (12130): Elaborated megafunction instantiation "timer:senso_timer|lpm_divide:Div0" File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/timer_behav.vhd Line: 33
 Info (12133): Instantiated megafunction "timer:senso_timer|lpm_divide:Div0" with the following parameter: File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/timer_behav.vhd Line: 33
     Info (12134): Parameter "LPM_WIDTHN" = "32"
@@ -649,30 +667,37 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/abs_
     Info (12023): Found entity 1: abs_divider_nbg File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/abs_divider_nbg.tdf Line: 29
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_uve.tdf
     Info (12023): Found entity 1: alt_u_div_uve File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/alt_u_div_uve.tdf Line: 23
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_nn9.tdf
-    Info (12023): Found entity 1: lpm_abs_nn9 File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_abs_nn9.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_4p9.tdf
     Info (12023): Found entity 1: lpm_abs_4p9 File: /home/mrpeanutbutter/Documents/Uni/Sem3/EDS/Senso/db/lpm_abs_4p9.tdf Line: 23
 Info (286030): Timing-Driven Synthesis is running
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
     Critical Warning (18010): Register timer:senso_timer|\run_timer:ticks[0] will power up to Low
     Critical Warning (18010): Register timer:senso_timer|\run_timer:max_ticks[0] will power up to Low
-    Critical Warning (18010): Register timer:senso_timer|\run_timer:max_ticks[2] will power up to High
-    Critical Warning (18010): Register timer:senso_timer|\run_timer:max_ticks[5] will power up to High
     Critical Warning (18010): Register timer:senso_timer|\run_timer:max_ticks[6] will power up to High
+    Critical Warning (18010): Register timer:senso_timer|\run_timer:max_ticks[11] will power up to High
+    Critical Warning (18010): Register timer:senso_timer|\run_timer:max_ticks[12] will power up to High
+    Critical Warning (18010): Register timer:senso_timer|\run_timer:max_ticks[13] will power up to High
+    Critical Warning (18010): Register timer:senso_timer|\run_timer:max_ticks[14] will power up to High
+    Critical Warning (18010): Register timer:senso_timer|\run_timer:max_ticks[16] will power up to High
+    Critical Warning (18010): Register timer:senso_timer|\run_timer:max_ticks[18] will power up to High
+    Critical Warning (18010): Register timer:senso_timer|\run_timer:max_ticks[19] will power up to High
+    Critical Warning (18010): Register timer:senso_timer|\run_timer:max_ticks[20] will power up to High
+    Critical Warning (18010): Register timer:senso_timer|\run_timer:max_ticks[21] will power up to High
+    Critical Warning (18010): Register timer:senso_timer|\run_timer:max_ticks[22] will power up to High
+    Critical Warning (18010): Register timer:senso_timer|\run_timer:max_ticks[24] will power up to High
     Critical Warning (18010): Register timer:senso_timer|\run_timer:ticks[31] will power up to Low
     Critical Warning (18010): Register timer:senso_timer|\run_timer:max_ticks[31] will power up to Low
 Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1015 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1101 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 18 output pins
-    Info (21061): Implemented 991 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 1089 megabytes
-    Info: Processing ended: Wed Jan  8 18:20:35 2020
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:27
+    Info (21061): Implemented 1077 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
+    Info: Peak virtual memory: 1107 megabytes
+    Info: Processing ended: Mon Jan 13 15:56:53 2020
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:25
 
 
